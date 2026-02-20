@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-black: #0f1115;
+  --color-brand-dark: #161a22;
+  --color-brand-red: #e60000;
+  --color-brand-red-light: #ff4d4d;
+  --color-brand-red-dark: #990000;
+  --color-brand-navy: #0f172a;
+  --color-brand-navy-light: #1a2a6c;
+  --color-brand-navy-dark: #050b18;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-black text-gray-100 font-sans;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-2 bg-brand-red text-white rounded-lg transition-all duration-300 transform hover:scale-105 hover:bg-brand-red-light cursor-pointer;
+  }
+
+  .card-premium {
+    @apply bg-brand-dark border border-gray-800 rounded-xl p-6 hover:border-brand-red transition-all duration-500 shadow-lg hover:shadow-red-500/20;
+  }
+
+  .nav-link {
+    @apply text-gray-300 hover:text-brand-red transition-colors duration-300 cursor-pointer;
+  }
+}

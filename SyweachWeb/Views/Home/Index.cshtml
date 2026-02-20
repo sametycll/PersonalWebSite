@@ -1,0 +1,210 @@
+﻿@model SyweachWeb.ViewModels.HomeViewModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> Localizer
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 overflow-hidden">
+    <!-- Abstract background elements -->
+    <div class="absolute top-0 left-0 w-full h-full -z-10 bg-[radial-gradient(circle_at_50%_50%,_rgba(15,23,42,1)_0%,_rgba(10,10,10,1)_100%)]"></div>
+    <div class="absolute top-1/4 -right-20 w-96 h-96 bg-brand-red opacity-10 blur-[100px] rounded-full animate-pulse-slow"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-brand-red font-mono text-sm tracking-widest uppercase mb-4 animate-fade-in">@Localizer["Hello"]</h2>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-4">
+                SAMET <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-navy-light">YÜCEL</span>
+            </h1>
+            <p class="sr-only">Samet Yücel - Backend Developer - .NET Core Developer - ASP.NET Core Specialist</p>
+            <p class="text-brand-red font-mono text-lg tracking-[0.2em] uppercase mb-10">@Localizer["JobTitle"]</p>
+            <p class="max-w-2xl mx-auto text-xl text-gray-400 leading-relaxed mb-10">
+                @Localizer["HeroDescription"]
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#about" class="btn-primary">@Localizer["About"]</a>
+                <a href="#projects" class="px-6 py-2 border border-gray-700 hover:border-brand-red text-white rounded-lg transition-all duration-300">@Localizer["Projects"]</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Me Section -->
+<section id="about" class="py-24 bg-brand-dark/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="order-2 lg:order-1">
+                <h2 class="text-brand-red font-mono text-sm tracking-widest uppercase mb-4">@Localizer["About"]</h2>
+                <h3 class="text-3xl font-bold text-white mb-6">Backend Developer & .NET Enthusiast</h3>
+                <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                    @Localizer["AboutDetail"]
+                </p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="p-4 bg-brand-black border border-gray-800 rounded-xl">
+                        <div class="text-brand-red font-bold text-xl mb-1">Corporate</div>
+                        <div class="text-gray-500 text-sm">Experience in large-scale projects</div>
+                    </div>
+                    <div class="p-4 bg-brand-black border border-gray-800 rounded-xl">
+                        <div class="text-brand-red font-bold text-xl mb-1">Full-Stack</div>
+                        <div class="text-gray-500 text-sm">Balanced approach to development</div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2 relative">
+                <div class="aspect-square bg-gradient-to-br from-brand-red/10 to-brand-navy/10 rounded-3xl overflow-hidden border border-gray-800 p-12 flex items-center justify-center relative group">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(230,0,0,0.1)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+                    <div class="text-center relative z-10 transition-transform duration-700 group-hover:scale-105">
+                        <i class="devicon-dotnetcore-plain text-8xl text-brand-red mb-6 block drop-shadow-[0_0_20px_rgba(230,0,0,0.6)] animate-pulse-slow"></i>
+                        <div class="text-5xl font-black text-white tracking-tighter mb-2">.NET</div>
+                        <div class="text-brand-red font-mono text-[10px] tracking-[0.5em] uppercase opacity-80">Ecosystem</div>
+                    </div>
+                    <!-- Decorative floating elements -->
+                    <div class="absolute top-10 left-10 w-20 h-20 bg-brand-red/10 blur-2xl rounded-full group-hover:bg-brand-red/20 transition-all duration-700"></div>
+                    <div class="absolute bottom-10 right-10 w-24 h-24 bg-brand-navy/10 blur-2xl rounded-full group-hover:bg-brand-navy/20 transition-all duration-700"></div>
+                </div>
+                <!-- Decorative elements -->
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-red blur-3xl opacity-20"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-24 bg-brand-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between mb-16 px-4 border-l-4 border-brand-red">
+            <div>
+                <h2 class="text-4xl font-bold text-white">@Localizer["Projects"]</h2>
+                <p class="text-gray-500 mt-2">@Localizer["ProjectSubTitle"]</p>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            @foreach (var project in Model.Projects)
+            {
+                <div class="card-premium group">
+                    <div class="aspect-video bg-gray-900 rounded-lg overflow-hidden mb-6 relative">
+                        <img src="@project.ImageUrl" alt="@project.Title" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" onerror="this.src='https://placehold.co/600x400/121212/e60000?text=@project.Title'"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black/80 to-transparent"></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-red transition-colors">@project.Title</h3>
+                    <p class="text-gray-400 text-sm mb-4 line-clamp-2">@project.Description</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        @foreach (var tech in project.Technologies)
+                        {
+                            <span class="text-[10px] font-mono px-2 py-1 bg-brand-navy rounded text-brand-red-light border border-brand-red/20 uppercase">@tech</span>
+                        }
+                    </div>
+                    <a href="@project.ProjectUrl" target="_blank" class="inline-flex items-center text-brand-red hover:text-white transition-colors text-sm font-semibold">
+                        View Project
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-24 bg-brand-dark/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-white mb-4">@Localizer["Skills"]</h2>
+            <div class="w-20 h-1 bg-brand-red mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
+            @foreach (var skill in Model.Skills)
+            {
+                <div class="flex flex-col items-center p-6 bg-brand-black border border-gray-800 rounded-2xl hover:border-brand-navy hover:bg-brand-navy/10 transition-all duration-300 transform hover:-translate-y-2 group">
+                    <i class="@skill.Icon text-4xl text-gray-500 group-hover:text-brand-red transition-colors mb-4"></i>
+                    <span class="text-xs font-medium text-gray-400 text-center">@skill.Name</span>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-24 bg-brand-black">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="card-premium relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-10">
+                <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+            </div>
+            
+            <h2 class="text-3xl font-bold text-white mb-8">@Localizer["Contact"]</h2>
+            
+            <form id="contactForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-2">Name</label>
+                        <input type="text" name="name" class="w-full bg-brand-black border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red outline-none transition-all" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                        <input type="email" name="email" class="w-full bg-brand-black border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red outline-none transition-all" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                    <textarea name="message" rows="4" class="w-full bg-brand-black border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-brand-red focus:ring-1 focus:ring-brand-red outline-none transition-all" required></textarea>
+                </div>
+                <button type="submit" id="submitBtn" class="btn-primary w-full">
+                    Send Message
+                </button>
+                <div id="formStatus" class="hidden text-center text-brand-red font-mono text-sm mt-4"></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#contactForm').on('submit', function(e) {
+                e.preventDefault();
+                const $btn = $('#submitBtn');
+                const $status = $('#formStatus');
+                
+                const formData = {
+                    name: $('input[name="name"]').val(),
+                    email: $('input[name="email"]').val(),
+                    message: $('textarea[name="message"]').val()
+                };
+
+                $btn.prop('disabled', true).text('Sending...');
+                
+                $.ajax({
+                    url: '/Home/SubmitContact',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(formData),
+                    success: function(response) {
+                        $status.removeClass('hidden text-red-500').addClass('text-green-500').text(response.message);
+                        $btn.text('Send Message').prop('disabled', false);
+                        $('#contactForm')[0].reset();
+                        setTimeout(() => $status.addClass('hidden'), 5000);
+                    },
+                    error: function(xhr) {
+                        const errorMsg = xhr.responseJSON ? xhr.responseJSON.message : 'Bir hata oluştu.';
+                        $status.removeClass('hidden text-green-500').addClass('text-red-500').text(errorMsg);
+                        $btn.text('Send Message').prop('disabled', false);
+                    }
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 80
+                    }, 800);
+                }
+            });
+        });
+    </script>
+}

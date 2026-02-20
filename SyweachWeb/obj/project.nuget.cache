@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "Aw8YhEq1Q0E=",
+  "success": true,
+  "projectFilePath": "D:\\MyRepo\\PersonalWebSite\\SyweachWeb\\SyweachWeb.csproj",
+  "expectedPackageFiles": [
+    "D:\\NugetPackages\\bouncycastle.cryptography\\2.5.0\\bouncycastle.cryptography.2.5.0.nupkg.sha512",
+    "D:\\NugetPackages\\mailkit\\4.10.0\\mailkit.4.10.0.nupkg.sha512",
+    "D:\\NugetPackages\\mimekit\\4.10.0\\mimekit.4.10.0.nupkg.sha512",
+    "D:\\NugetPackages\\system.formats.asn1\\8.0.1\\system.formats.asn1.8.0.1.nupkg.sha512",
+    "D:\\NugetPackages\\system.security.cryptography.pkcs\\8.0.1\\system.security.cryptography.pkcs.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

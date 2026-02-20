@@ -1,0 +1,31 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "SyweachWeb/1.0.0": {
+        "runtime": {
+          "SyweachWeb.dll": {}
+        },
+        "resources": {
+          "en/SyweachWeb.resources.dll": {
+            "locale": "en"
+          },
+          "tr/SyweachWeb.resources.dll": {
+            "locale": "tr"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SyweachWeb/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
