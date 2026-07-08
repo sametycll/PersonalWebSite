@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SyweachWeb")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute(" ")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7deeac090db832ac2d9590c514ffd1fbb558c82")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c3c8a02bf279bdb97b7a5f520126c6c0a7fcddf")]
 [assembly: System.Reflection.AssemblyProductAttribute("SyweachWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SyweachWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
